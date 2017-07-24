@@ -5,6 +5,8 @@
  */
 package com.funcionalidades;
 
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
 import javax.swing.tree.DefaultTreeModel;
 
 /**
@@ -12,6 +14,13 @@ import javax.swing.tree.DefaultTreeModel;
  * @author david_000
  */
 public interface InterERP_interface {
-    abstract  public DefaultTreeModel criaMenu_Arvore();
-    abstract  public void adiona_Tab(String tab);
+
+    abstract public DefaultTreeModel criaMenu_Arvore();
+
+    abstract public void adiciona_Tab(String tab);
+
+    abstract public void remove_Tab(JTabbedPane pane);
+    
+    abstract public void buscaCliente(JTextField text);
+    
 }

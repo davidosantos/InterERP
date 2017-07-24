@@ -6,11 +6,19 @@
 package com;
 
 import com.funcionalidades.cr_operacoes;
+import com.funcionalidades.pesquisa_de_clientes;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.time.Clock;
+import java.util.Date;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import javax.swing.JTree;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import org.openide.awt.TabbedPaneFactory;
+import org.openide.util.Exceptions;
 
 /**
  *
@@ -37,9 +45,11 @@ public class InterERMain extends javax.swing.JFrame
 
         jScrollPane1 = new javax.swing.JScrollPane();
         Menu_jTree = new javax.swing.JTree();
-        jTabbedPane_InterERPMain = new javax.swing.JTabbedPane();
+        jTabbedPane_InterERPMain = TabbedPaneFactory.createCloseButtonTabbedPane();
         jToolBar1 = new javax.swing.JToolBar();
         jToolBar2 = new javax.swing.JToolBar();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jToolBar3 = new javax.swing.JToolBar();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -61,9 +71,28 @@ public class InterERMain extends javax.swing.JFrame
         jScrollPane1.setViewportView(Menu_jTree);
         Menu_jTree.getAccessibleContext().setAccessibleName("Menu_Arvore");
 
+        jTabbedPane_InterERPMain.addPropertyChangeListener( TabbedPaneFactory.PROP_CLOSE, new PropertyChangeListener() {
+            public void propertyChange(PropertyChangeEvent evt) {
+                remove_Tab((JTabbedPane)evt.getSource());
+            }
+        });
+
+        jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
+        jToolBar2.setFloatable(false);
         jToolBar2.setRollover(true);
+
+        jFormattedTextField1.setEditable(false);
+        jFormattedTextField1.setBackground(new java.awt.Color(240, 240, 240));
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.FULL))));
+        jFormattedTextField1.setText("Domingo, 23 de Julho de 2017");
+        jFormattedTextField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jFormattedTextField1.setEnabled(false);
+        jToolBar2.add(jFormattedTextField1);
+
+        jToolBar3.setFloatable(false);
+        jToolBar3.setRollover(true);
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -80,23 +109,28 @@ public class InterERMain extends javax.swing.JFrame
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTabbedPane_InterERPMain, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE)))
+                        .addComponent(jTabbedPane_InterERPMain, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jToolBar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToolBar3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTabbedPane_InterERPMain)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE))
                 .addGap(3, 3, 3)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -112,9 +146,9 @@ public class InterERMain extends javax.swing.JFrame
         if (node == null) {
             return;
         }
-        
+
         System.out.print(node.toString());
-        adiona_Tab(node.toString());
+        adiciona_Tab(node.toString());
     }//GEN-LAST:event_Menu_jTree_Click
 
     /**
@@ -150,10 +184,12 @@ public class InterERMain extends javax.swing.JFrame
                 new InterERMain().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTree Menu_jTree;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -161,6 +197,7 @@ public class InterERMain extends javax.swing.JFrame
     private javax.swing.JTabbedPane jTabbedPane_InterERPMain;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
+    private javax.swing.JToolBar jToolBar3;
     // End of variables declaration//GEN-END:variables
 
     @Override
@@ -193,15 +230,37 @@ public class InterERMain extends javax.swing.JFrame
     }
 
     @Override
-    public void adiona_Tab(String tab) {
-        switch (tab){
-            case "CR - Operações" : {
-                JPanel cr_op = new cr_operacoes();
-                //cr_op.set
-                jTabbedPane_InterERPMain.add(tab,cr_op);
+    public void adiciona_Tab(String tab) {
+        switch (tab) {
+            case "CR - Operações": {
+                JPanel cr_op = new cr_operacoes(this);
+                jTabbedPane_InterERPMain.addTab(tab, cr_op);
             }
         }
     }
-    
-    
+
+    @Override
+    public void remove_Tab(JTabbedPane pane) {
+        int sel = pane.getSelectedIndex();
+        pane.removeTabAt(sel);
+    }
+
+    @Override
+    public void buscaCliente(JTextField text) {
+        synchronized (this) {
+          //  try {
+                /* Create and display the form */
+                java.awt.EventQueue.invokeLater(new Runnable() {
+                    public void run() {
+                        new pesquisa_de_clientes(text).setVisible(true);
+                    }
+                });
+
+               // this.wait();
+           // } catch (InterruptedException ex) {
+           //     Exceptions.printStackTrace(ex);
+          //  }
+        }
+    }
+
 }
