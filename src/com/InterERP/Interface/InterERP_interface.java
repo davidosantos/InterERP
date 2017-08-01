@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.funcionalidades;
+package com.InterERP.Interface;
 
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
@@ -13,14 +13,14 @@ import javax.swing.tree.DefaultTreeModel;
  *
  * @author david_000
  */
-public interface InterERP_interface {
+public  interface InterERP_interface {
 
     abstract public DefaultTreeModel criaMenu_Arvore();
 
-    abstract public void adiciona_Tab(String tab);
+    abstract public void adiciona_Tab(JTabbedPane tabbedPane, String tab);
 
     abstract public void remove_Tab(JTabbedPane pane);
     
-    abstract public void buscaCliente(JTextField text);
+    abstract public int buscaCliente(JTextField text);
     
 }

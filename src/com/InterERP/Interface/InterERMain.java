@@ -3,34 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com;
+package com.InterERP.Interface;
 
-import com.funcionalidades.cr_operacoes;
-import com.funcionalidades.pesquisa_de_clientes;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.time.Clock;
-import java.util.Date;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
 import org.openide.awt.TabbedPaneFactory;
-import org.openide.util.Exceptions;
 
 /**
  *
  * @author david_000
  */
-public class InterERMain extends javax.swing.JFrame
-        implements com.funcionalidades.InterERP_interface {
+public class InterERMain extends InterERP {
 
     /**
      * Creates new form InterERMain
      */
     public InterERMain() {
+      
         initComponents();
     }
 
@@ -57,6 +48,7 @@ public class InterERMain extends javax.swing.JFrame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inter ERP");
         setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(1024, 800));
 
         Menu_jTree.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Menu_jTree.setModel(criaMenu_Arvore());
@@ -84,7 +76,6 @@ public class InterERMain extends javax.swing.JFrame
         jToolBar2.setRollover(true);
 
         jFormattedTextField1.setEditable(false);
-        jFormattedTextField1.setBackground(new java.awt.Color(240, 240, 240));
         jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.FULL))));
         jFormattedTextField1.setText("Domingo, 23 de Julho de 2017");
         jFormattedTextField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -143,18 +134,17 @@ public class InterERMain extends javax.swing.JFrame
 
     private void Menu_jTree_Click(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_Menu_jTree_Click
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) Menu_jTree.getLastSelectedPathComponent();
-        if (node == null) {
+        if (node != null && !node.isLeaf()) {
             return;
+        } else {
         }
-
-        System.out.print(node.toString());
-        adiciona_Tab(node.toString());
+        adiciona_Tab(jTabbedPane_InterERPMain,node.toString());
     }//GEN-LAST:event_Menu_jTree_Click
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void start(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -199,68 +189,5 @@ public class InterERMain extends javax.swing.JFrame
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JToolBar jToolBar3;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public DefaultTreeModel criaMenu_Arvore() {
-        javax.swing.tree.DefaultMutableTreeNode interERP = new javax.swing.tree.DefaultMutableTreeNode("InterERP");
-        javax.swing.tree.DefaultMutableTreeNode menuCadastros = new javax.swing.tree.DefaultMutableTreeNode("Cadastros");
-        javax.swing.tree.DefaultMutableTreeNode menuCR = new javax.swing.tree.DefaultMutableTreeNode("Contas a Receber");
-        javax.swing.tree.DefaultMutableTreeNode menuCP = new javax.swing.tree.DefaultMutableTreeNode("Contas a Pagar");
-        javax.swing.tree.DefaultMutableTreeNode menuVendas = new javax.swing.tree.DefaultMutableTreeNode("Vendas");
-        javax.swing.tree.DefaultMutableTreeNode menuCaixa = new javax.swing.tree.DefaultMutableTreeNode("Caixa");
-        javax.swing.tree.DefaultMutableTreeNode menuGerencia = new javax.swing.tree.DefaultMutableTreeNode("Gerencia");
-
-        javax.swing.tree.DefaultMutableTreeNode subMenuClientes = new javax.swing.tree.DefaultMutableTreeNode("CA - Clientes");
-        javax.swing.tree.DefaultMutableTreeNode subMenuRelat = new javax.swing.tree.DefaultMutableTreeNode("CA - Relatórios");
-        javax.swing.tree.DefaultMutableTreeNode subMenuOper = new javax.swing.tree.DefaultMutableTreeNode("CR - Operações");
-
-        menuCadastros.add(subMenuClientes);
-        menuCadastros.add(subMenuRelat);
-
-        menuCR.add(subMenuOper);
-
-        interERP.add(menuCadastros);
-        interERP.add(menuCR);
-        interERP.add(menuCP);
-        interERP.add(menuVendas);
-        interERP.add(menuCaixa);
-        interERP.add(menuGerencia);
-
-        return new javax.swing.tree.DefaultTreeModel(interERP);
-    }
-
-    @Override
-    public void adiciona_Tab(String tab) {
-        switch (tab) {
-            case "CR - Operações": {
-                JPanel cr_op = new cr_operacoes(this);
-                jTabbedPane_InterERPMain.addTab(tab, cr_op);
-            }
-        }
-    }
-
-    @Override
-    public void remove_Tab(JTabbedPane pane) {
-        int sel = pane.getSelectedIndex();
-        pane.removeTabAt(sel);
-    }
-
-    @Override
-    public void buscaCliente(JTextField text) {
-        synchronized (this) {
-          //  try {
-                /* Create and display the form */
-                java.awt.EventQueue.invokeLater(new Runnable() {
-                    public void run() {
-                        new pesquisa_de_clientes(text).setVisible(true);
-                    }
-                });
-
-               // this.wait();
-           // } catch (InterruptedException ex) {
-           //     Exceptions.printStackTrace(ex);
-          //  }
-        }
-    }
 
 }

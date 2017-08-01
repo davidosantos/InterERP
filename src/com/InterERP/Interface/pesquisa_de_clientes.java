@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.funcionalidades;
+package com.InterERP.Interface;
 
 import javax.swing.JTextField;
 
@@ -12,7 +12,7 @@ import javax.swing.JTextField;
  * @author david_000
  */
 public class pesquisa_de_clientes extends javax.swing.JFrame {
-
+    public int cliente;
     /**
      * Creates new form pesquisa_de_clientes
      * @param text
@@ -85,6 +85,11 @@ public class pesquisa_de_clientes extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -121,6 +126,10 @@ public class pesquisa_de_clientes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+       cliente = 45;
+    }//GEN-LAST:event_jTable1MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
