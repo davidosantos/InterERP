@@ -71,6 +71,12 @@ public class InterERP extends javax.swing.JFrame implements InterERP_interface {
                 JPanel ca_cli = new ca_clientes(this);
                 tabbedPane.addTab(tab, ca_cli);
             }
+            
+            case "PE - Vender" : {
+                JPanel teste = new teste();
+                tabbedPane.addTab(tab, teste);
+            }
+            
             break;
             default: {
                 JOptionPane.showMessageDialog(this, "Não Encontrado o Programa " + tab + ".", "Erro", JOptionPane.ERROR_MESSAGE);
