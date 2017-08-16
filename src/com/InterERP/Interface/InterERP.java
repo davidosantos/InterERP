@@ -5,6 +5,8 @@
  */
 package com.InterERP.Interface;
 
+import com.InterERP.Vendas.InterfaceVendas;
+import com.InterERP.Vendas.Vendas;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -16,7 +18,7 @@ import org.openide.util.Exceptions;
  *
  * @author david_000
  */
-public class InterERP extends javax.swing.JFrame implements InterERP_interface {
+public class InterERP extends javax.swing.JFrame implements InterERP_interface, InterfaceVendas {
 
     /**
      * @param args the command line arguments
@@ -72,11 +74,17 @@ public class InterERP extends javax.swing.JFrame implements InterERP_interface {
                 tabbedPane.addTab(tab, ca_cli);
             }
             
+            break;
             case "PE - Vender" : {
-                JPanel teste = new teste();
-                tabbedPane.addTab(tab, teste);
-            }
+                JPanel InterfaceVendas = new Vendas(this);
+                tabbedPane.addTab(tab, InterfaceVendas);
             
+          
+           }
+            
+            
+            
+           
             break;
             default: {
                 JOptionPane.showMessageDialog(this, "Não Encontrado o Programa " + tab + ".", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -93,16 +101,15 @@ public class InterERP extends javax.swing.JFrame implements InterERP_interface {
     @Override
     public int buscaCliente(JTextField text) {
           int num = 0;
-        Thread tela = new Thread(new Runnable() {
-            public void run() {
-                synchronized (this) {
-                    pesquisa_de_clientes ps = new pesquisa_de_clientes(text);
-                    ps.setVisible(true);
-                    // num = ps.cliente;
-                    notify();
-                }
+        Thread tela;
+        tela = new Thread(() -> {
+            synchronized (InterERP.this) {
+                pesquisa_de_clientes ps = new pesquisa_de_clientes(text);
+                ps.setVisible(true);
+                // num = ps.cliente;
+                notify();
             }
-        });
+          });
 
         synchronized (tela) {
             try {
@@ -113,6 +120,11 @@ public class InterERP extends javax.swing.JFrame implements InterERP_interface {
             }
         }
         return num;
+    }
+
+    @Override
+    public void fecharVendas() {
+        
     }
 
 }
