@@ -3,8 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.InterERP.Interface;
+package com.InterERP;
 
+import com.InterERP.Cadastros.ca_clientes;
+import com.InterERP.ContasAReceber.contasAReceber;
+import com.InterERP.ContasAReceber.cr_operacoes;
+import com.InterERP.Interface.InterERMain;
+import com.InterERP.Interface.InterERP_interface;
+import com.InterERP.Interface.pesquisa_de_clientes;
+import com.InterERP.Interface.teste;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -16,7 +23,8 @@ import org.openide.util.Exceptions;
  *
  * @author david_000
  */
-public class InterERP extends javax.swing.JFrame implements InterERP_interface {
+public class InterERP extends javax.swing.JFrame implements InterERP_interface, contasAReceber {
+    
 
     /**
      * @param args the command line arguments
@@ -71,7 +79,7 @@ public class InterERP extends javax.swing.JFrame implements InterERP_interface {
                 JPanel ca_cli = new ca_clientes(this);
                 tabbedPane.addTab(tab, ca_cli);
             }
-            
+            break;
             case "PE - Vender" : {
                 JPanel teste = new teste();
                 tabbedPane.addTab(tab, teste);
@@ -113,6 +121,21 @@ public class InterERP extends javax.swing.JFrame implements InterERP_interface {
             }
         }
         return num;
+    }
+
+    @Override
+    public void IncluirTitulo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void excluirTitulo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void baixarTitulo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
