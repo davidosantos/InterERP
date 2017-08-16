@@ -5,6 +5,7 @@
  */
 package com.InterERP.Interface;
 
+import com.InterERP.InterERP;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import javax.swing.JTabbedPane;
