@@ -5,13 +5,25 @@
  */
 package com.InterERP.ContasAReceber;
 
+import java.util.Date;
+
 /**
  *
  * @author david
  */
 public class cr_parcela {
+
+    Date dataPagamento;
+    Date dataVencimento;
+    String numeroBordero;
+    String numeroNoBanco;
+    int diasEmAtraso;
     double valorOriginal;
     double valorParcela;
     double juroParcela;
     double multaParcela;
+    double taxaParcela;
+    double impostoParcela;
+    double saldoParcela;
+    double descontoParcela;
 }

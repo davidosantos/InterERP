@@ -16,4 +16,6 @@ public interface contasAReceber {
     public void excluirTitulo();
 
     public void baixarTitulo();
+    
+    public cr_titulo[] buscaTitulos(int cliente);
 }

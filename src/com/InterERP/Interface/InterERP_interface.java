@@ -18,6 +18,8 @@ public  interface InterERP_interface {
     abstract public DefaultTreeModel criaMenu_Arvore();
 
     abstract public void adiciona_Tab(JTabbedPane tabbedPane, String tab);
+    
+    abstract public void adicionaBotaoAbaixo(JTabbedPane tabbedPane, String tab);
 
     abstract public void remove_Tab(JTabbedPane pane);
     

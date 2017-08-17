@@ -38,7 +38,7 @@ public class InterERMain extends InterERP {
         jScrollPane1 = new javax.swing.JScrollPane();
         Menu_jTree = new javax.swing.JTree();
         jTabbedPane_InterERPMain = TabbedPaneFactory.createCloseButtonTabbedPane();
-        jToolBar1 = new javax.swing.JToolBar();
+        jToolBar_Down = new javax.swing.JToolBar();
         jToolBar2 = new javax.swing.JToolBar();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jToolBar3 = new javax.swing.JToolBar();
@@ -71,8 +71,10 @@ public class InterERMain extends InterERP {
             }
         });
 
-        jToolBar1.setFloatable(false);
-        jToolBar1.setRollover(true);
+        jToolBar_Down.setBackground(new java.awt.Color(153, 153, 153));
+        jToolBar_Down.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToolBar_Down.setFloatable(false);
+        jToolBar_Down.setRollover(true);
 
         jToolBar2.setFloatable(false);
         jToolBar2.setRollover(true);
@@ -120,7 +122,7 @@ public class InterERMain extends InterERP {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jToolBar_Down, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -143,7 +145,7 @@ public class InterERMain extends InterERP {
                     .addComponent(jTabbedPane_InterERPMain)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE))
                 .addGap(3, 3, 3)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jToolBar_Down, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getAccessibleContext().setAccessibleDescription("");
@@ -208,9 +210,9 @@ public class InterERMain extends InterERP {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane_InterERPMain;
-    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JToolBar jToolBar3;
+    private javax.swing.JToolBar jToolBar_Down;
     // End of variables declaration//GEN-END:variables
 
 }

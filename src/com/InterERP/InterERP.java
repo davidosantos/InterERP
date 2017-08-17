@@ -8,9 +8,9 @@ package com.InterERP;
 import com.InterERP.Cadastros.ca_clientes;
 import com.InterERP.ContasAReceber.contasAReceber;
 import com.InterERP.ContasAReceber.cr_operacoes;
+import com.InterERP.ContasAReceber.cr_titulo;
 import com.InterERP.Interface.InterERMain;
 import com.InterERP.Interface.InterERP_interface;
-import com.InterERP.Interface.pesquisa_de_clientes;
 import com.InterERP.Interface.teste;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -102,10 +102,11 @@ public class InterERP extends javax.swing.JFrame implements InterERP_interface, 
     public int buscaCliente(JTextField text) {
           int num = 0;
         Thread tela = new Thread(new Runnable() {
+            @Override
             public void run() {
                 synchronized (this) {
-                    pesquisa_de_clientes ps = new pesquisa_de_clientes(text);
-                    ps.setVisible(true);
+                    //pesquisa_de_clientes ps = new pesquisa_de_clientes(text);
+                   // ps.setVisible(true);
                     // num = ps.cliente;
                     notify();
                 }
@@ -136,6 +137,16 @@ public class InterERP extends javax.swing.JFrame implements InterERP_interface, 
     @Override
     public void baixarTitulo() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public cr_titulo[] buscaTitulos(int cliente) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void adicionaBotaoAbaixo(JTabbedPane tabbedPane, String tab) {
+        //jToolBar_Down
     }
 
 }

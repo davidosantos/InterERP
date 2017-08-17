@@ -16,6 +16,7 @@ public class cr_titulo {
     cr_parcela[] pacelas;
     int loja;
     Date emissao;
+    Date movimento;
     Date vencimento;
     Date UltPagamento;
     Date UltAlteracao;
@@ -24,5 +25,9 @@ public class cr_titulo {
     double valorTitulo;
     double juroTitulo;
     double multaTitulo;
+    double taxaTitulo;
+    double impostoTitulo;
+    double saldoTitulo;
+    double descontoTitulo;
             
 }
