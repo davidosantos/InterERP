@@ -18,14 +18,14 @@ import org.openide.util.Exceptions;
  */
 public class ca_clientes extends javax.swing.JPanel {
 
-    InterERP_interface interERP;
+    InterERPInterface interERP;
     java.awt.Image image;
     /**
      * Creates new form ca_clientes
      *
      * @param interERP
      */
-    public ca_clientes(InterERP_interface interERP) {
+    public ca_clientes(InterERPInterface interERP) {
         initComponents();
         this.interERP = interERP;
         

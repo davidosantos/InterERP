@@ -13,7 +13,7 @@ import javax.swing.tree.DefaultTreeModel;
  *
  * @author david_000
  */
-public  interface InterERP_interface {
+public  interface InterERPInterface {
 
     abstract public DefaultTreeModel criaMenu_Arvore();
 
@@ -24,5 +24,7 @@ public  interface InterERP_interface {
     abstract public void remove_Tab(JTabbedPane pane);
     
     abstract public int buscaCliente(JTextField text);
+    
+    abstract public void setMensagem(String text);
     
 }

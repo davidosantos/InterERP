@@ -39,6 +39,7 @@ public class InterERMain extends InterERP {
         Menu_jTree = new javax.swing.JTree();
         jTabbedPane_InterERPMain = TabbedPaneFactory.createCloseButtonTabbedPane();
         jToolBar_Down = new javax.swing.JToolBar();
+        jLabel_Status = new javax.swing.JLabel();
         jToolBar2 = new javax.swing.JToolBar();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jToolBar3 = new javax.swing.JToolBar();
@@ -75,6 +76,7 @@ public class InterERMain extends InterERP {
         jToolBar_Down.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jToolBar_Down.setFloatable(false);
         jToolBar_Down.setRollover(true);
+        jToolBar_Down.add(jLabel_Status);
 
         jToolBar2.setFloatable(false);
         jToolBar2.setRollover(true);
@@ -200,10 +202,12 @@ public class InterERMain extends InterERP {
         });
 
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTree Menu_jTree;
     private javax.swing.JFormattedTextField jFormattedTextField1;
+    public static javax.swing.JLabel jLabel_Status;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

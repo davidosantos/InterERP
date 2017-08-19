@@ -17,7 +17,7 @@ import org.openide.util.Exceptions;
  */
 public class cr_operacoes extends javax.swing.JPanel {
 
-    InterERP_interface interERP;
+    InterERPInterface interERP;
     java.awt.Image image;
 
     /**
@@ -25,7 +25,7 @@ public class cr_operacoes extends javax.swing.JPanel {
      *
      * @param interERP
      */
-    public cr_operacoes(InterERP_interface interERP) {
+    public cr_operacoes(InterERPInterface interERP) {
         initComponents();
         this.interERP = interERP;
         try {
