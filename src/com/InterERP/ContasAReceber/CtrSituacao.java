@@ -1,14 +1,21 @@
+package com.InterERP.ContasAReceber;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.InterERP.Cadastros;
 
 /**
  *
  * @author david
  */
-public class ca_fornecedor {
-    
+public enum CtrSituacao {
+    Baixado,
+    Aberto,
+    Parcial,
+    Aberto_vencido,
+    Parcial_Vencido,
+    Protestado_Vencido,
+    Cobranca_Escritural;
 }

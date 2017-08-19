@@ -5,26 +5,26 @@
  */
 package com.InterERP;
 
-import com.InterERP.Cadastros.ca_clientes;
-import com.InterERP.ContasAReceber.contasAReceber;
-import com.InterERP.ContasAReceber.cr_operacoes;
-import com.InterERP.ContasAReceber.cr_titulo;
+import com.InterERP.Cadastros.CadClientes;
+import com.InterERP.ContasAReceber.CtrOperacoes;
+import com.InterERP.ContasAReceber.CtrTitulo;
 import com.InterERP.Interface.InterERMain;
-import com.InterERP.Interface.InterERP_interface;
-import com.InterERP.Interface.teste;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.tree.DefaultTreeModel;
 import org.openide.util.Exceptions;
+import com.InterERP.Interface.InterERPInterface;
+import com.InterERP.ContasAReceber.CtrContasAReceber;
 
 /**
  *
  * @author david_000
  */
-public class InterERP extends javax.swing.JFrame implements InterERP_interface, contasAReceber {
-    
+public class InterERP extends javax.swing.JFrame implements
+        InterERPInterface,
+        CtrContasAReceber {
 
     /**
      * @param args the command line arguments
@@ -68,23 +68,22 @@ public class InterERP extends javax.swing.JFrame implements InterERP_interface, 
     }
 
     @Override
-    public void adiciona_Tab(JTabbedPane tabbedPane,String tab) {
-         switch (tab) {
+    public void adiciona_Tab(JTabbedPane tabbedPane, String tab) {
+        switch (tab) {
             case "CR - Operações": {
-                JPanel cr_op = new cr_operacoes(this);
+                JPanel cr_op = new CtrOperacoes(this, this);
                 tabbedPane.addTab(tab, cr_op);
             }
             break;
             case "CA - Clientes": {
-                JPanel ca_cli = new ca_clientes(this);
+                JPanel ca_cli = new CadClientes(this);
                 tabbedPane.addTab(tab, ca_cli);
             }
             break;
-            case "PE - Vender" : {
-                JPanel teste = new teste();
-                tabbedPane.addTab(tab, teste);
+            case "PE - Vender": {
+               
             }
-            
+
             break;
             default: {
                 JOptionPane.showMessageDialog(this, "Não Encontrado o Programa " + tab + ".", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -100,13 +99,13 @@ public class InterERP extends javax.swing.JFrame implements InterERP_interface, 
 
     @Override
     public int buscaCliente(JTextField text) {
-          int num = 0;
+        int num = 0;
         Thread tela = new Thread(new Runnable() {
             @Override
             public void run() {
                 synchronized (this) {
                     //pesquisa_de_clientes ps = new pesquisa_de_clientes(text);
-                   // ps.setVisible(true);
+                    // ps.setVisible(true);
                     // num = ps.cliente;
                     notify();
                 }
@@ -140,13 +139,18 @@ public class InterERP extends javax.swing.JFrame implements InterERP_interface, 
     }
 
     @Override
-    public cr_titulo[] buscaTitulos(int cliente) {
+    public CtrTitulo[] buscaTitulos(int cliente) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void adicionaBotaoAbaixo(JTabbedPane tabbedPane, String tab) {
         //jToolBar_Down
+    }
+
+    @Override
+    public void setMensagem(String text) {
+        InterERMain.jLabel_Status.setText(text);
     }
 
 }

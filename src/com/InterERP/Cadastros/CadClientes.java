@@ -5,33 +5,32 @@
  */
 package com.InterERP.Cadastros;
 
-import com.InterERP.Interface.InterERP_interface;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import org.openide.util.Exceptions;
+import com.InterERP.Interface.InterERPInterface;
 
 /**
  *
  * @author david_000
  */
-public class ca_clientes extends javax.swing.JPanel {
+public class CadClientes extends javax.swing.JPanel {
 
-    InterERP_interface interERP;
+    InterERPInterface interERP;
     java.awt.Image image;
     /**
      * Creates new form ca_clientes
      *
      * @param interERP
      */
-    public ca_clientes(InterERP_interface interERP) {
+    public CadClientes(InterERPInterface interERP) {
         initComponents();
         this.interERP = interERP;
         
         try {
-            image = ImageIO.read(new File("C:\\Users\\david_000\\Documents\\NetBeansProjects\\InterERP\\outros arquivos\\imagens\\flow4.jpg"));
+            image = ImageIO.read(new File("./outros arquivos/imagens/flow4.jpg"));
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
@@ -98,44 +97,44 @@ public class ca_clientes extends javax.swing.JPanel {
         jFormattedTextField5 = new javax.swing.JFormattedTextField();
 
         buttonGroup_tipoClientes.add(jRadioButton_fisico);
-        org.openide.awt.Mnemonics.setLocalizedText(jRadioButton_fisico, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jRadioButton_fisico.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jRadioButton_fisico, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jRadioButton_fisico.text")); // NOI18N
 
         buttonGroup_tipoClientes.add(jRadioButton_juridico);
-        org.openide.awt.Mnemonics.setLocalizedText(jRadioButton_juridico, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jRadioButton_juridico.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jRadioButton_juridico, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jRadioButton_juridico.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel1.text")); // NOI18N
 
-        jTextField1.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField1.text")); // NOI18N
+        jTextField1.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField1.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel2.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel2.text")); // NOI18N
 
-        jTextField_fantasia.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField_fantasia.text")); // NOI18N
+        jTextField_fantasia.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField_fantasia.text")); // NOI18N
         jTextField_fantasia.setEnabled(jRadioButton_juridico.isSelected());
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel3, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel3.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel3, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel3.text")); // NOI18N
 
-        jTextField3.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField3.text")); // NOI18N
+        jTextField3.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField3.text")); // NOI18N
         jTextField3.setEnabled(false);
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel5, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel5.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel5, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel5.text")); // NOI18N
 
-        jTextField2.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField2.text")); // NOI18N
+        jTextField2.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField2.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox1, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jCheckBox1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox1, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jCheckBox1.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel4.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel4.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel6, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel6.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel6, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel6.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel7, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel7.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel7, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel7.text")); // NOI18N
 
-        jTextField4.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField4.text")); // NOI18N
+        jTextField4.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField4.text")); // NOI18N
 
-        jTextField5.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField5.text")); // NOI18N
+        jTextField5.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField5.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel8, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel8.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel8, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel8.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel9, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel9.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel9, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel9.text")); // NOI18N
 
         try {
             jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
@@ -143,31 +142,31 @@ public class ca_clientes extends javax.swing.JPanel {
             ex.printStackTrace();
         }
 
-        jTextField6.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField6.text")); // NOI18N
+        jTextField6.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField6.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel10, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel10.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel10, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel10.text")); // NOI18N
 
-        jTextField7.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField7.text")); // NOI18N
+        jTextField7.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField7.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel11, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel11.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel11, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel11.text")); // NOI18N
 
-        jTextField8.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField8.text")); // NOI18N
+        jTextField8.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField8.text")); // NOI18N
 
-        jTextField9.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField9.text")); // NOI18N
+        jTextField9.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField9.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel12, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel12.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel12, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel12.text")); // NOI18N
 
-        jTextField10.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField10.text")); // NOI18N
+        jTextField10.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField10.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel13, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel13.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel13, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel13.text")); // NOI18N
 
-        jTextField11.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField11.text")); // NOI18N
+        jTextField11.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField11.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel14, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel14.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel14, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel14.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel15, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel15.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel15, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel15.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel16, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel16.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel16, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel16.text")); // NOI18N
 
         try {
             jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(###) ####-####")));
@@ -181,27 +180,27 @@ public class ca_clientes extends javax.swing.JPanel {
             ex.printStackTrace();
         }
 
-        jTextField12.setText(org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jTextField12.text")); // NOI18N
+        jTextField12.setText(org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jTextField12.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel17, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel17.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel17, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel17.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel18, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel18.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel18, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel18.text")); // NOI18N
 
         buttonGroup_genero.add(jRadioButton_juridico1);
-        org.openide.awt.Mnemonics.setLocalizedText(jRadioButton_juridico1, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jRadioButton_juridico1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jRadioButton_juridico1, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jRadioButton_juridico1.text")); // NOI18N
 
         buttonGroup_genero.add(jRadioButton_fisico1);
-        org.openide.awt.Mnemonics.setLocalizedText(jRadioButton_fisico1, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jRadioButton_fisico1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jRadioButton_fisico1, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jRadioButton_fisico1.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel19, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel19.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel19, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel19.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel20, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel20.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel20, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel20.text")); // NOI18N
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel21, org.openide.util.NbBundle.getMessage(ca_clientes.class, "ca_clientes.jLabel21.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel21, org.openide.util.NbBundle.getMessage(CadClientes.class, "CadClientes.jLabel21.text")); // NOI18N
 
         try {
             jFormattedTextField5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(###) #####-####")));

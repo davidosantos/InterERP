@@ -9,12 +9,12 @@ package com.InterERP.Pesquisa;
  *
  * @author david
  */
-public class pesquisaCliente extends javax.swing.JPanel {
+public class Pes_pesquisaCliente extends javax.swing.JPanel {
 
     /**
      * Creates new form pesquisaCliente
      */
-    public pesquisaCliente() {
+    public Pes_pesquisaCliente() {
         initComponents();
     }
 
@@ -33,12 +33,12 @@ public class pesquisaCliente extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(pesquisaCliente.class, "pesquisaCliente.jLabel1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(Pes_pesquisaCliente.class, "Pes_pesquisaCliente.jLabel1.text")); // NOI18N
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
+                {"Joao", null, null, null},
+                {"David", null, null, null},
                 {null, null, null, null},
                 {null, null, null, null}
             },
@@ -48,9 +48,9 @@ public class pesquisaCliente extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jTextField1.setText(org.openide.util.NbBundle.getMessage(pesquisaCliente.class, "pesquisaCliente.jTextField1.text")); // NOI18N
+        jTextField1.setText(org.openide.util.NbBundle.getMessage(Pes_pesquisaCliente.class, "Pes_pesquisaCliente.jTextField1.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(pesquisaCliente.class, "pesquisaCliente.jButton1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(Pes_pesquisaCliente.class, "Pes_pesquisaCliente.jButton1.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -93,6 +93,9 @@ public class pesquisaCliente extends javax.swing.JPanel {
     
     public void setArgumento(String arg){
         jTextField1.setText(arg);
+    }
+    public String getSelecionado(){
+        return jTable1.getModel().getValueAt(jTable1.getSelectedRow(),0 ).toString();
     }
 
 }

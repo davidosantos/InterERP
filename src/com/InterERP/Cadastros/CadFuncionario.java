@@ -9,6 +9,6 @@ package com.InterERP.Cadastros;
  *
  * @author david
  */
-public class ca_funcionario {
+public class CadFuncionario {
     
 }

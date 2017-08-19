@@ -9,7 +9,7 @@ package com.InterERP.ContasAReceber;
  *
  * @author david
  */
-public interface contasAReceber {
+public interface CtrContasAReceber {
 
     public void IncluirTitulo();
 
@@ -17,5 +17,5 @@ public interface contasAReceber {
 
     public void baixarTitulo();
     
-    public cr_titulo[] buscaTitulos(int cliente);
+    public CtrTitulo[] buscaTitulos(int cliente);
 }

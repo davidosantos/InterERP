@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.InterERP.Cadastros;
+package com.InterERP.ContasAPagar;
 
 /**
  *
  * @author david
  */
-public class ca_cliente {
-    public String nome;
-
-    public ca_cliente() {
-        
-    }
+public class CtpOperacoes {
+    
 }

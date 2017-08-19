@@ -5,11 +5,11 @@
  */
 package com.InterERP.ContasAReceber;
 
-import com.InterERP.Cadastros.ca_cliente;
-import com.InterERP.Cadastros.ca_clientes;
-import com.InterERP.Interface.InterERP_interface;
-import com.InterERP.Pesquisa.chamaTela;
-import com.InterERP.Pesquisa.pesquisaCliente;
+import com.InterERP.Cadastros.CadCliente;
+import com.InterERP.Interface.InterERPInterface;
+import com.InterERP.Pesquisa.Pes_chamaTela;
+import com.InterERP.Pesquisa.Pes_pesquisaCliente;
+import com.InterERP.Teclas.teclas;
 import java.awt.Graphics;
 import java.io.File;
 import java.io.IOException;
@@ -20,19 +20,23 @@ import org.openide.util.Exceptions;
  *
  * @author david_000
  */
-public class cr_operacoes extends javax.swing.JPanel {
+public class CtrOperacoes extends javax.swing.JPanel {
 
-    contasAReceber ctsAReceber;
+    CtrContasAReceber ctsAReceber;
+    InterERPInterface interERPInterf;
     java.awt.Image image;
+    
+    CadCliente cliente;
 
     /**
      * Creates new form cr_operacoes
      *
      * @param interERP
      */
-    public cr_operacoes(contasAReceber ctsAReceber) {
+    public CtrOperacoes(CtrContasAReceber ctsAReceber, InterERPInterface interERPInterf) {
         initComponents();
         this.ctsAReceber = ctsAReceber;
+        this.interERPInterf = interERPInterf;
         try {
             image = ImageIO.read(new File("./outros arquivos/imagens/flow4.jpg"));
         } catch (IOException ex) {
@@ -114,15 +118,32 @@ public class cr_operacoes extends javax.swing.JPanel {
         jTable2 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jFormattedTextField17 = new javax.swing.JFormattedTextField();
         jFormattedTextField16 = new javax.swing.JFormattedTextField();
 
         setEnabled(false);
 
         jLabel1.setText("Código:");
 
-        jLabel3.setText("Nome:");
+        jLabel3.setText("Cliente:");
 
         jTextField_cr_buscar_cliente.setText("Jose");
+        jTextField_cr_buscar_cliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField_cr_buscar_clienteFocusGained(evt);
+            }
+        });
+        jTextField_cr_buscar_cliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jTextField_cr_buscar_clienteMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTextField_cr_buscar_clienteMouseEntered(evt);
+            }
+        });
         jTextField_cr_buscar_cliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextField_cr_buscar_clienteKeyReleased(evt);
@@ -534,11 +555,11 @@ public class cr_operacoes extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1216, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1282, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Títulos", jPanel2);
@@ -568,11 +589,11 @@ public class cr_operacoes extends javax.swing.JPanel {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1216, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1282, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Parcelas", jPanel3);
@@ -581,24 +602,48 @@ public class cr_operacoes extends javax.swing.JPanel {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1216, Short.MAX_VALUE)
+            .addGap(0, 1282, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 92, Short.MAX_VALUE)
+            .addGap(0, 110, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("movimentaçoes", jPanel4);
+
+        jLabel2.setText("Valor Pago:");
+
+        jButton2.setText("Baixar");
+
+        jButton3.setText("Imprimir Recibo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1216, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jFormattedTextField17))
+                .addContainerGap(1034, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 92, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jFormattedTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Operaçoes", jPanel1);
@@ -638,7 +683,7 @@ public class cr_operacoes extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jSeparator2)
                             .addComponent(jTabbedPane1)
-                            .addComponent(jPanel_crOperacoes_dados, javax.swing.GroupLayout.PREFERRED_SIZE, 1221, Short.MAX_VALUE)
+                            .addComponent(jPanel_crOperacoes_dados, javax.swing.GroupLayout.PREFERRED_SIZE, 1287, Short.MAX_VALUE)
                             .addComponent(jSeparator1))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -670,8 +715,11 @@ public class cr_operacoes extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField_cr_buscar_clienteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_cr_buscar_clienteKeyReleased
-        if(evt.getKeyCode() == 116){
-            ca_cliente teste =  new chamaTela(new pesquisaCliente(),this, "Pesquisa Clientes",jTextField_cr_buscar_cliente.getText()).getResult();
+        if(evt.getKeyCode() == teclas.f5){
+            cliente =  new Pes_chamaTela(new Pes_pesquisaCliente(),this, 
+                    "Pesquisa Clientes",jTextField_cr_buscar_cliente.getText()).getResult();
+            jTextField_cr_buscar_cliente.setText(cliente.nome);
+            jFormattedTextField16.setText(cliente.nome);
         }
     }//GEN-LAST:event_jTextField_cr_buscar_clienteKeyReleased
 
@@ -679,9 +727,23 @@ public class cr_operacoes extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jTextField_cr_buscar_clienteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_cr_buscar_clienteFocusGained
+       interERPInterf.setMensagem("Pressine F5 para Pesquisar.");
+    }//GEN-LAST:event_jTextField_cr_buscar_clienteFocusGained
+
+    private void jTextField_cr_buscar_clienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_cr_buscar_clienteMouseEntered
+        interERPInterf.setMensagem("Pressine F5 para Pesquisar.");
+    }//GEN-LAST:event_jTextField_cr_buscar_clienteMouseEntered
+
+    private void jTextField_cr_buscar_clienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_cr_buscar_clienteMouseExited
+        interERPInterf.setMensagem("");
+    }//GEN-LAST:event_jTextField_cr_buscar_clienteMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JFormattedTextField jFormattedTextField1;
@@ -692,6 +754,7 @@ public class cr_operacoes extends javax.swing.JPanel {
     private javax.swing.JFormattedTextField jFormattedTextField14;
     private javax.swing.JFormattedTextField jFormattedTextField15;
     private javax.swing.JFormattedTextField jFormattedTextField16;
+    private javax.swing.JFormattedTextField jFormattedTextField17;
     private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JFormattedTextField jFormattedTextField4;
@@ -711,6 +774,7 @@ public class cr_operacoes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;

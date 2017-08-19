@@ -11,16 +11,16 @@ import java.util.Date;
  *
  * @author david
  */
-public class cr_titulo {
+public class CtrTitulo {
     String titulo;
-    cr_parcela[] pacelas;
+    CtrParcela[] pacelas;
     int loja;
     Date emissao;
     Date movimento;
     Date vencimento;
     Date UltPagamento;
     Date UltAlteracao;
-    cr_situacao situacao;
+    CtrSituacao situacao;
     double valorOriginal;
     double valorTitulo;
     double juroTitulo;

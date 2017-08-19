@@ -11,10 +11,11 @@ import java.util.Date;
  *
  * @author david
  */
-public class cr_parcela {
+public class CtrParcela {
 
     Date dataPagamento;
     Date dataVencimento;
+    Date dataAltParcela;
     String numeroBordero;
     String numeroNoBanco;
     int diasEmAtraso;
