@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.InterERP.Config;
+package com.InterERP.ContasAReceber;
 
 /**
  *
  * @author david
  */
-public class configs {
-    public static boolean imprimeNotaAutomatico = false;
-    public static boolean imprimeReciboAutomatico = false;
+public class CtrTrasacao {
+    
 }

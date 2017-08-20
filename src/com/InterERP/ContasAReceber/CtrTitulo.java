@@ -12,6 +12,7 @@ import java.util.Date;
  * @author david
  */
 public class CtrTitulo {
+
     String titulo;
     CtrParcela[] pacelas;
     int loja;
@@ -23,11 +24,11 @@ public class CtrTitulo {
     CtrSituacao situacao;
     double valorOriginal;
     double valorTitulo;
+    double valorParcela;
     double juroTitulo;
+    double impostoTitulo;
     double multaTitulo;
     double taxaTitulo;
-    double impostoTitulo;
-    double saldoTitulo;
     double descontoTitulo;
-            
+    double saldoTitulo;
 }

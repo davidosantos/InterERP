@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.InterERP.Pesquisa;
-
-import com.InterERP.Cadastros.CadCliente;
+package com.InterERP.Config;
 
 /**
  *
  * @author david
  */
-public interface Pes_pesquisa {
-    abstract CadCliente pesquisaCliente();
+public class ConConfigs {
+    public static boolean imprimeNotaAutomatico = false;
+    public static boolean imprimeReciboAutomatico = false;
 }

@@ -48,7 +48,7 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jSeparator2" max="32767" attributes="0"/>
                           <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jPanel_crOperacoes_dados" alignment="0" pref="1287" max="32767" attributes="0"/>
+                          <Component id="jPanel_crOperacoes_dados" alignment="0" max="32767" attributes="0"/>
                           <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -172,7 +172,10 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jPanel9" alignment="0" max="32767" attributes="0"/>
@@ -199,7 +202,7 @@
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -219,8 +222,8 @@
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="jSeparator3" min="-2" pref="2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -228,7 +231,11 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jScrollPane3" pref="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" min="-2" pref="109" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -355,7 +362,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel20" min="-2" pref="77" max="-2" attributes="0"/>
-                          <Component id="jTextField3" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="jTextField3" min="-2" pref="98" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -667,7 +674,7 @@
                           <Component id="jFormattedTextField13" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                           <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jFormattedTextField12" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                           <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -762,6 +769,11 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JLabel" name="jLabel25">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cliente Vinculados:"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JSeparator" name="jSeparator2">
@@ -782,7 +794,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="1282" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="1583" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -802,21 +814,24 @@
                 <Component class="javax.swing.JTable" name="jTable1">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="15" rowCount="6">
+                      <Table columnCount="18" rowCount="6">
                         <Column editable="false" title="T&#xed;tulo" type="java.lang.Object"/>
                         <Column editable="false" title="Parcela" type="java.lang.Object"/>
                         <Column editable="false" title="Loja" type="java.lang.Object"/>
                         <Column editable="false" title="Emiss&#xe3;o" type="java.lang.Object"/>
+                        <Column editable="false" title="Movto" type="java.lang.Object"/>
                         <Column editable="false" title="Vencimento" type="java.lang.Object"/>
+                        <Column editable="false" title="Ult. Pag." type="java.lang.Object"/>
+                        <Column editable="false" title="Ult. Alt." type="java.lang.Object"/>
                         <Column editable="false" title="Situa&#xe7;&#xe3;o" type="java.lang.Object"/>
-                        <Column editable="false" title="Valor Parcela" type="java.lang.Object"/>
-                        <Column editable="false" title="Valor T&#xed;tulo" type="java.lang.Object"/>
+                        <Column editable="false" title="Valor Orig." type="java.lang.Double"/>
+                        <Column editable="false" title="Valor T&#xed;tulo" type="java.lang.Double"/>
+                        <Column editable="false" title="Valor Parcela" type="java.lang.Double"/>
                         <Column editable="false" title="Juro" type="java.lang.Object"/>
                         <Column editable="false" title="Impostos" type="java.lang.Object"/>
                         <Column editable="false" title="Taxa" type="java.lang.Object"/>
                         <Column editable="false" title="Multa" type="java.lang.Object"/>
                         <Column editable="false" title="Descontos" type="java.lang.Object"/>
-                        <Column editable="false" title="Saldo Parcela" type="java.lang.Object"/>
                         <Column editable="false" title="Saldo T&#xed;tulo" type="java.lang.Object"/>
                       </Table>
                     </Property>
@@ -838,7 +853,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" pref="1282" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="1583" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -858,11 +873,21 @@
                 <Component class="javax.swing.JTable" name="jTable2">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
-                        <Column editable="false" title="Title 1" type="java.lang.Object"/>
-                        <Column editable="false" title="Title 2" type="java.lang.Object"/>
-                        <Column editable="false" title="Title 3" type="java.lang.Object"/>
-                        <Column editable="false" title="Title 4" type="java.lang.Object"/>
+                      <Table columnCount="14" rowCount="4">
+                        <Column editable="false" title="Data Pag." type="java.lang.Object"/>
+                        <Column editable="false" title="Data Venc." type="java.lang.Object"/>
+                        <Column editable="false" title="Data Alt. Parc." type="java.lang.Object"/>
+                        <Column editable="false" title="Num. Bordero" type="java.lang.Integer"/>
+                        <Column editable="false" title="Num. Tit. Bco" type="java.lang.String"/>
+                        <Column editable="false" title="Dias Em Atrs" type="java.lang.Integer"/>
+                        <Column editable="false" title="Valor Orig." type="java.lang.Double"/>
+                        <Column editable="false" title="Valor Parc." type="java.lang.Double"/>
+                        <Column editable="false" title="Juro Parc." type="java.lang.Double"/>
+                        <Column editable="false" title="Taxa Parc." type="java.lang.Double"/>
+                        <Column editable="false" title="Multa Parc." type="java.lang.Double"/>
+                        <Column editable="false" title="Imposto Parc." type="java.lang.Double"/>
+                        <Column editable="false" title="Desc. Parc." type="java.lang.Double"/>
+                        <Column editable="false" title="Saldo Parc." type="java.lang.Double"/>
                       </Table>
                     </Property>
                   </Properties>
@@ -883,7 +908,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1282" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="1583" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -916,7 +941,7 @@
                           <Component id="jButton3" max="32767" attributes="0"/>
                           <Component id="jFormattedTextField17" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="1034" max="32767" attributes="0"/>
+                      <EmptySpace pref="1335" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

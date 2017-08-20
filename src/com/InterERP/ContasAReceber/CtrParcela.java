@@ -25,6 +25,7 @@ public class CtrParcela {
     double multaParcela;
     double taxaParcela;
     double impostoParcela;
-    double saldoParcela;
     double descontoParcela;
+    double saldoParcela;
+    
 }

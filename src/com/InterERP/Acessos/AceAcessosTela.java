@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.InterERP.Cadastros;
+package com.InterERP.Acessos;
 
 /**
  *
  * @author david
  */
-public class CadLojas extends javax.swing.JPanel {
+public class AceAcessosTela extends javax.swing.JPanel {
 
     /**
-     * Creates new form CadLojas
+     * Creates new form Acessos
      */
-    public CadLojas() {
+    public AceAcessosTela() {
         initComponents();
     }
 
@@ -31,11 +31,11 @@ public class CadLojas extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1072, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 499, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

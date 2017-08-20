@@ -9,12 +9,12 @@ package com.InterERP.Banco;
  *
  * @author david
  */
-public class remessa extends javax.swing.JPanel {
+public class BcoRemessa extends javax.swing.JPanel {
 
     /**
      * Creates new form remessa
      */
-    public remessa() {
+    public BcoRemessa() {
         initComponents();
     }
 
@@ -31,7 +31,7 @@ public class remessa extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 784, Short.MAX_VALUE)
+            .addGap(0, 1009, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

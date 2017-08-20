@@ -16,7 +16,7 @@ import org.openide.awt.TabbedPaneFactory;
  *
  * @author david_000
  */
-public class InterERMain extends InterERP {
+public class InterERMain extends InterERP implements InterERPInterface {
 
     /**
      * Creates new form InterERMain

@@ -14,14 +14,14 @@ import javax.swing.JOptionPane;
  *
  * @author david
  */
-public class Pes_chamaTela {
+public class PesChamaTela {
 
-    Pes_pesquisaCliente tela;
+    PesPesquisaClienteTela tela;
     String titulo;
     Component invoker;
     String pesquisa;
 
-    public Pes_chamaTela(Pes_pesquisaCliente tela, Component invoker, String titulo, String pesquisa) {
+    public PesChamaTela(PesPesquisaClienteTela tela, Component invoker, String titulo, String pesquisa) {
         this.tela = tela;
         this.titulo = titulo;
         this.invoker = invoker;
