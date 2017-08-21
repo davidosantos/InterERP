@@ -5,17 +5,13 @@
  */
 package com.InterERP;
 
-import com.InterERP.ContasAReceber.CtrTitulo;
 import com.InterERP.Interface.InterERMain;
-import javax.swing.JTabbedPane;
-import com.InterERP.ContasAReceber.CtrContasAReceber;
 
 /**
  *
  * @author david_000
  */
-public class InterERP extends javax.swing.JFrame implements
-        CtrContasAReceber {
+public class InterERP extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
@@ -24,29 +20,5 @@ public class InterERP extends javax.swing.JFrame implements
 
         InterERMain.start(null);
     }
-
-
-// <editor-fold defaultstate="collapsed" desc="Contas a Receber"> 
-
-    @Override
-    public void IncluirTitulo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void excluirTitulo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void baixarTitulo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public CtrTitulo[] buscaTitulos(int cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-//</editor-fold> 
 
 }

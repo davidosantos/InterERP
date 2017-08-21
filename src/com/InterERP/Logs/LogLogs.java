@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.InterERP.BancoDeDados;
+package com.InterERP.Logs;
 
 /**
  *
  * @author david
  */
-public interface BancoDeDados {
-    abstract void conecta();
+public interface LogLogs {
+    default public void LogGravaLog(String log) {
+        
+    }
 }

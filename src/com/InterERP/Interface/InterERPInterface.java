@@ -50,10 +50,10 @@ public interface InterERPInterface {
         return new javax.swing.tree.DefaultTreeModel(interERP);
     }
 
-    default public void adiciona_Tab(JTabbedPane tabbedPane, String tab) {
+    default public void intAdiciona_Tab(JTabbedPane tabbedPane, String tab) {
         switch (tab) {
             case "CR - Operações": {
-                JPanel cr_op = new CtrOperacoesTela(this);
+                JPanel cr_op = new CtrOperacoesTela();
                 tabbedPane.addTab(tab, cr_op);
             }
             break;
@@ -77,12 +77,13 @@ public interface InterERPInterface {
 
     }
 
-    default public void remove_Tab(JTabbedPane pane) {
+    default public void intRemove_Tab(JTabbedPane pane) {
         int sel = pane.getSelectedIndex();
         pane.removeTabAt(sel);
     }
 
-    default public void setMensagem(String text) {
+    default public void intSetMensagem(String text) {
+        InterERMain.jLabel_Status.setText(text);
     }
 
 }

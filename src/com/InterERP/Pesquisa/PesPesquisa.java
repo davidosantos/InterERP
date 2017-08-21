@@ -6,11 +6,28 @@
 package com.InterERP.Pesquisa;
 
 import com.InterERP.Cadastros.CadCliente;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author david
  */
 public interface PesPesquisa {
-    abstract CadCliente pesquisaCliente();
+
+    default public CadCliente pesquisaCliente(Component cmpnt, String iniciaPor) {
+
+        CadCliente cliente = new CadCliente();
+        PesPesquisaClienteTela tela = new PesPesquisaClienteTela();
+
+        tela.setArgumento(iniciaPor);
+        if (JOptionPane.showConfirmDialog(cmpnt, tela, "Pesquisa de Clientes",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE)
+                == JOptionPane.OK_OPTION) {
+
+            cliente.nome = tela.getSelecionado();
+
+        }
+        return cliente;
+    }
 }

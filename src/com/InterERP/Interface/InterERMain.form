@@ -124,7 +124,7 @@
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane_InterERPMain">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="TabbedPaneFactory.createCloseButtonTabbedPane()"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jTabbedPane_InterERPMain.addPropertyChangeListener( TabbedPaneFactory.PROP_CLOSE, new PropertyChangeListener() {&#xa;    public void propertyChange(PropertyChangeEvent evt) {&#xa;     remove_Tab((JTabbedPane)evt.getSource());&#xa;    }&#xa;});"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jTabbedPane_InterERPMain.addPropertyChangeListener( TabbedPaneFactory.PROP_CLOSE, new PropertyChangeListener() {&#xa;    public void propertyChange(PropertyChangeEvent evt) {&#xa;     intRemove_Tab((JTabbedPane)evt.getSource());&#xa;    }&#xa;});&#xa;"/>
       </AuxValues>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>

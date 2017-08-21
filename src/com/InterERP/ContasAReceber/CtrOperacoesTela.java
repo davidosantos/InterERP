@@ -7,8 +7,7 @@ package com.InterERP.ContasAReceber;
 
 import com.InterERP.Cadastros.CadCliente;
 import com.InterERP.Interface.InterERPInterface;
-import com.InterERP.Pesquisa.PesChamaTela;
-import com.InterERP.Pesquisa.PesPesquisaClienteTela;
+import com.InterERP.Pesquisa.PesPesquisa;
 import com.InterERP.Teclas.teclas;
 import java.awt.Graphics;
 import java.io.File;
@@ -20,24 +19,25 @@ import org.openide.util.Exceptions;
  *
  * @author david_000
  */
-public class CtrOperacoesTela extends javax.swing.JPanel {
+public class CtrOperacoesTela extends javax.swing.JPanel implements 
+        InterERPInterface,
+        PesPesquisa {
 
-    CtrContasAReceber ctsAReceber;
-    CtrTitulo CtrTituloSelessionado;
-    InterERPInterface interERPInterf;
-    java.awt.Image image;
     
+    CtrTitulo CtrTituloSelessionado;
+    
+    java.awt.Image image;
+
     CadCliente cliente;
 
     /**
      * Creates new form cr_operacoes
      *
-     * @param interERP
+     * @param interERPInterf
      */
-    public CtrOperacoesTela(InterERPInterface interERPInterf) {
+    public CtrOperacoesTela() {
         initComponents();
-        this.ctsAReceber = ctsAReceber;
-        this.interERPInterf = interERPInterf;
+        
         try {
             image = ImageIO.read(new File("./outros arquivos/imagens/flow4.jpg"));
         } catch (IOException ex) {
@@ -470,7 +470,7 @@ public class CtrOperacoesTela extends javax.swing.JPanel {
                     .addComponent(jFormattedTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jLabel25.setText("Cliente Vinculados:");
+        jLabel25.setText("Clientes Vinculados:");
 
         javax.swing.GroupLayout jPanel_crOperacoes_dadosLayout = new javax.swing.GroupLayout(jPanel_crOperacoes_dados);
         jPanel_crOperacoes_dados.setLayout(jPanel_crOperacoes_dadosLayout);
@@ -521,16 +521,16 @@ public class CtrOperacoesTela extends javax.swing.JPanel {
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel_crOperacoes_dadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel_crOperacoes_dadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel_crOperacoes_dadosLayout.createSequentialGroup()
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel_crOperacoes_dadosLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_crOperacoes_dadosLayout.createSequentialGroup()
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -738,28 +738,28 @@ public class CtrOperacoesTela extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField_cr_buscar_clienteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_cr_buscar_clienteKeyReleased
-        if(evt.getKeyCode() == teclas.f5){
-            cliente =  new PesChamaTela(new PesPesquisaClienteTela(),this, 
-                    "Pesquisa Clientes",jTextField_cr_buscar_cliente.getText()).getResult();
+        if (evt.getKeyCode() == teclas.f5) {
+            cliente = pesquisaCliente(this, jTextField_cr_buscar_cliente.getText());
             jTextField_cr_buscar_cliente.setText(cliente.nome);
             jFormattedTextField16.setText(cliente.nome);
         }
+
     }//GEN-LAST:event_jTextField_cr_buscar_clienteKeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField_cr_buscar_clienteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_cr_buscar_clienteFocusGained
-       interERPInterf.setMensagem("Pressine F5 para Pesquisar.");
+        intSetMensagem("Pressine F5 para Pesquisar.");
     }//GEN-LAST:event_jTextField_cr_buscar_clienteFocusGained
 
     private void jTextField_cr_buscar_clienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_cr_buscar_clienteMouseEntered
-        interERPInterf.setMensagem("Pressine F5 para Pesquisar.");
+        intSetMensagem("Pressine F5 para Pesquisar.");
     }//GEN-LAST:event_jTextField_cr_buscar_clienteMouseEntered
 
     private void jTextField_cr_buscar_clienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_cr_buscar_clienteMouseExited
-        interERPInterf.setMensagem("");
+        intSetMensagem("");
     }//GEN-LAST:event_jTextField_cr_buscar_clienteMouseExited
 
 

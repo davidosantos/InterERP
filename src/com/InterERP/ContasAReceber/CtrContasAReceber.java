@@ -5,17 +5,33 @@
  */
 package com.InterERP.ContasAReceber;
 
+import com.InterERP.BancoDeDados.BanBancoDeDados;
+import com.InterERP.BancoDeDados.BanException;
+import com.InterERP.Logs.LogLogs;
+
 /**
  *
  * @author david
  */
-public interface CtrContasAReceber {
+public interface CtrContasAReceber extends BanBancoDeDados, LogLogs {
 
-    public void IncluirTitulo();
+    default public void crtIncluirTitulo(CtrTitulo titulo){
+        try {
+            banAtualiza("teste");
+        } catch (BanException ex) {
+            LogGravaLog(ex.getMessage());
+        }
+    }
 
-    public void excluirTitulo();
+    default public void crtExcluirTitulo(CtrTitulo titulo){
+        
+    }
 
-    public void baixarTitulo();
+    default public void crtBaixarTitulo(CtrTitulo titulo){
+        
+    }
     
-    public CtrTitulo[] buscaTitulos(int cliente);
+    default public CtrTitulo[] crtBuscaTitulos(int cliente){
+        return null;
+    }
 }
