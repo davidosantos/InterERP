@@ -9,12 +9,12 @@ package com.InterERP.Config;
  *
  * @author david
  */
-public class ConBancoDeDados extends javax.swing.JPanel {
+public class ConBancoDeDadosTela extends javax.swing.JPanel {
 
     /**
      * Creates new form configBancoDeDados
      */
-    public ConBancoDeDados() {
+    public ConBancoDeDadosTela() {
         initComponents();
     }
 

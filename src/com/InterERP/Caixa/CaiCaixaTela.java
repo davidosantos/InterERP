@@ -9,12 +9,12 @@ package com.InterERP.Caixa;
  *
  * @author david
  */
-public class freteCaixa extends javax.swing.JPanel {
+public class CaiCaixaTela extends javax.swing.JPanel {
 
     /**
      * Creates new form freteCaixa
      */
-    public freteCaixa() {
+    public CaiCaixaTela() {
         initComponents();
     }
 
@@ -31,11 +31,11 @@ public class freteCaixa extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(freteCaixa.class, "freteCaixa.jLabel1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(CaiCaixaTela.class, "CaiCaixaTela.jLabel1.text")); // NOI18N
 
-        jTextField1.setText(org.openide.util.NbBundle.getMessage(freteCaixa.class, "freteCaixa.jTextField1.text")); // NOI18N
+        jTextField1.setText(org.openide.util.NbBundle.getMessage(CaiCaixaTela.class, "CaiCaixaTela.jTextField1.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(freteCaixa.class, "freteCaixa.jLabel2.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(CaiCaixaTela.class, "CaiCaixaTela.jLabel2.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

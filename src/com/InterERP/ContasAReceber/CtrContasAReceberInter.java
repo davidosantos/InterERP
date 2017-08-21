@@ -5,15 +5,15 @@
  */
 package com.InterERP.ContasAReceber;
 
-import com.InterERP.BancoDeDados.BanBancoDeDados;
 import com.InterERP.BancoDeDados.BanException;
 import com.InterERP.Logs.LogLogs;
+import com.InterERP.BancoDeDados.BanBancoDeDadosInter;
 
 /**
  *
  * @author david
  */
-public interface CtrContasAReceber extends BanBancoDeDados, LogLogs {
+public interface CtrContasAReceberInter extends BanBancoDeDadosInter, LogLogs {
 
     default public void crtIncluirTitulo(CtrTitulo titulo){
         try {

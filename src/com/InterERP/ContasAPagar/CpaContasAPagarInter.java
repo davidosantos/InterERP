@@ -3,19 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.InterERP.Logs;
+package com.InterERP.ContasAPagar;
+
+import com.InterERP.BancoDeDados.BanBancoDeDadosInter;
 
 /**
  *
  * @author david
  */
-public interface LogLogs {
-
-    /**
-     *
-     * @param log
-     */
-    default public void LogGravaLog(String log) {
-        
-    }
+public interface CpaContasAPagarInter extends BanBancoDeDadosInter{
+    
 }

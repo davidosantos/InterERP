@@ -9,7 +9,7 @@ package com.InterERP.BancoDeDados;
  *
  * @author david
  */
-public interface BanBancoDeDados {
+public interface BanBancoDeDadosInter {
     abstract void conecta() throws BanException;
     
     default public void banGrava(String Sql) throws BanException {

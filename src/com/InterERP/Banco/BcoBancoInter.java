@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author david
  */
-public interface BanBanco {
+public interface BcoBancoInter {
 
     /**
      *
