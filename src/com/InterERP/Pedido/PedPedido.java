@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.InterERP.NotaFiscal;
+package com.InterERP.Pedido;
 
 /**
  *
  * @author david
  */
-public class notaFiscal {
+public class PedPedido {
     
 }

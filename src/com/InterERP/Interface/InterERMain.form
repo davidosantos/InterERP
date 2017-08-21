@@ -104,7 +104,7 @@
               </Border>
             </Property>
             <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="criaMenu_Arvore()" type="code"/>
+              <Connection code="intCriaMenu_Arvore()" type="code"/>
             </Property>
             <Property name="autoscrolls" type="boolean" value="true"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">

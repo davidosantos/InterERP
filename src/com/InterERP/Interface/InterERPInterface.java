@@ -18,7 +18,7 @@ import javax.swing.tree.DefaultTreeModel;
  */
 public interface InterERPInterface {
 
-    default public DefaultTreeModel criaMenu_Arvore() {
+    default public DefaultTreeModel intCriaMenu_Arvore() {
         javax.swing.tree.DefaultMutableTreeNode interERP = new javax.swing.tree.DefaultMutableTreeNode("InterERP");
         javax.swing.tree.DefaultMutableTreeNode menuCadastros = new javax.swing.tree.DefaultMutableTreeNode("Cadastros");
         javax.swing.tree.DefaultMutableTreeNode menuCR = new javax.swing.tree.DefaultMutableTreeNode("Contas a Receber");

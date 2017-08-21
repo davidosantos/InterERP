@@ -54,7 +54,7 @@ public class InterERMain extends InterERP implements InterERPInterface {
         setMinimumSize(new java.awt.Dimension(1024, 800));
 
         Menu_jTree.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Menu_jTree.setModel(criaMenu_Arvore());
+        Menu_jTree.setModel(intCriaMenu_Arvore());
         Menu_jTree.setAutoscrolls(true);
         Menu_jTree.setMaximumSize(new java.awt.Dimension(1000, 1000));
         Menu_jTree.setName("Menu_Arvore"); // NOI18N
